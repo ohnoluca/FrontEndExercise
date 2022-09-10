@@ -33,16 +33,21 @@ export class AppComponent implements OnInit{
   }
 
   public onCreateUser(): void {
-    this.userService.createUser().subscribe(
-      (response: User) => {
-        console.log(response);
-        this.userService.addUser(response).subscribe();
-        this.getUsers();
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      },
-    );
+    var inputValue = (<HTMLInputElement>document.getElementById('numUsers')).value;
+    var userNum = parseInt(inputValue);
+    for(let i = 0; i < userNum; i++){
+      this.userService.createUser().subscribe(
+        (response: User) => {
+          console.log(response);
+          this.userService.addUser(response).subscribe();
+          this.getUsers();
+        },
+        (error: HttpErrorResponse) => {
+          alert(error.message);
+        },
+      );
+    }
+    
   }
 
   public onAddUser(addForm : NgForm): void {

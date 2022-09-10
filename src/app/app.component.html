@@ -8,7 +8,10 @@
          <li class="nav-item active">
             <a class="nav-link" (click)="onAddModal()">Add User <span class="sr-only">(current)</span></a>
          </li>
-         <button (click)="onCreateUser()" type="button" class="btn btn-primary">Create Mock User</button>
+         <form class="form-inline my-2 my-lg-0">
+            <input type="number" min="0" class="form-control" id="numUsers" placeholder="Number of Users">
+            <button (click)="onCreateUser()" type="button" class="btn btn-primary">Create Mock User</button>
+         </form>
       </ul>
    </div>
  </nav>
