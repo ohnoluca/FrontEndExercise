@@ -32,9 +32,10 @@ export class AppComponent implements OnInit{
     );
   }
 
-  public onCreateUser(): void {
-    var inputValue = (<HTMLInputElement>document.getElementById('numUsers')).value;
-    var userNum = parseInt(inputValue);
+  public onCreateUser(input : string): void {
+    //var inputValue = (<HTMLInputElement>document.getElementById('numUsers')).value;
+    
+    var userNum = parseInt(input);
     for(let i = 0; i < userNum; i++){
       this.userService.createUser().subscribe(
         (response: User) => {

@@ -9,8 +9,8 @@
             <a class="nav-link" (click)="onAddModal()">Add User <span class="sr-only">(current)</span></a>
          </li>
          <form class="form-inline my-2 my-lg-0">
-            <input type="number" min="0" class="form-control" id="numUsers" placeholder="Number of Users">
-            <button (click)="onCreateUser()" type="button" class="btn btn-primary">Create Mock User</button>
+            <input type="number" min="0" class="form-control mx-3" id="numUsers" placeholder="Number of Users" #input>
+            <button (click)="onCreateUser(input.value)" type="button" class="btn btn-primary">Create Mock User</button>
          </form>
       </ul>
    </div>
